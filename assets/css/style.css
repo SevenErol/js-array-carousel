@@ -52,6 +52,7 @@ i {
 
 .single_thumb {
     height: calc(100% / 5);
+    position: relative;
 }
 
 .thumbs img {
@@ -60,10 +61,14 @@ i {
 }
 
 .overlay {
-    background-color: rgba(0, 0, 0, 0.203);
+    background-color: rgba(0, 0, 0, 0.703);
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+}
+
+.no_overlay {
+    background-color: transparent;
 }

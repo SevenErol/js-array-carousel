@@ -36,6 +36,8 @@ previous.addEventListener("click", function () {
 
     allImages[imgPosition].classList.remove("active");
 
+    allOverlay[imgPosition].classList.remove("no_overlay");
+
     imgPosition --;
 
     if (imgPosition < 0) {
@@ -43,9 +45,14 @@ previous.addEventListener("click", function () {
         imgPosition = imagesCarousel.length -1;
         allImages[imgPosition].classList.add("active");
 
+        allOverlay[imgPosition].classList.add("no_overlay");
+
+
     } else {
 
         allImages[imgPosition].classList.add("active");
+
+        allOverlay[imgPosition].classList.add("no_overlay");
 
     }
 })
@@ -54,6 +61,8 @@ next.addEventListener("click", function () {
 
     allImages[imgPosition].classList.remove("active");
 
+    allOverlay[imgPosition].classList.remove("no_overlay");
+
     imgPosition ++;
 
     if (imgPosition > imagesCarousel.length -1) {
@@ -61,9 +70,14 @@ next.addEventListener("click", function () {
         imgPosition = 0;
         allImages[imgPosition].classList.add("active");
 
+        allOverlay[imgPosition].classList.add("no_overlay");
+
+
     } else {
 
         allImages[imgPosition].classList.add("active");
+
+        allOverlay[imgPosition].classList.add("no_overlay");
 
     }
 })
@@ -89,3 +103,6 @@ for ( let i = 0; i < imagesCarousel.length; i++) {
     singleThumb.appendChild(overlay);
 
 }
+
+const allOverlay = document.querySelectorAll(".single_thumb div");
+
