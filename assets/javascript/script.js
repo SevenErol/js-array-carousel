@@ -9,7 +9,11 @@ const imagesCarousel = [
 
 const slides = document.querySelector(".slides");
 
-const imgPosition = 0;
+let imgPosition = 0;
+
+const previous = document.querySelector(".previous");
+
+const next = document.querySelector(".next");
 
 for ( let i = 0; i < imagesCarousel.length; i++) {
 
@@ -25,3 +29,21 @@ const allImages = document.querySelectorAll(".slides img");
 
 allImages[imgPosition].classList.add("active");
 
+
+previous.addEventListener("click", function () {
+
+    allImages[imgPosition].classList.remove("active");
+
+    imgPosition --;
+
+    allImages[imgPosition].classList.add("active");
+})
+
+next.addEventListener("click", function () {
+
+    allImages[imgPosition].classList.remove("active");
+
+    imgPosition ++;
+
+    allImages[imgPosition].classList.add("active");
+})
