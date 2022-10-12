@@ -15,6 +15,8 @@ const previous = document.querySelector(".previous");
 
 const next = document.querySelector(".next");
 
+const thumbs = document.querySelector(".thumbs");
+
 for ( let i = 0; i < imagesCarousel.length; i++) {
 
     const thisImage = document.createElement("img");
@@ -44,7 +46,7 @@ previous.addEventListener("click", function () {
     } else {
 
         allImages[imgPosition].classList.add("active");
-        
+
     }
 })
 
@@ -65,3 +67,25 @@ next.addEventListener("click", function () {
 
     }
 })
+
+for ( let i = 0; i < imagesCarousel.length; i++) {
+
+    const singleThumb = document.createElement("div");
+
+    const thumbImage = document.createElement("img");
+
+    const overlay = document.createElement("div");
+
+    singleThumb.classList.add("single_thumb");
+
+    overlay.classList.add("overlay");
+
+    thumbImage.src = imagesCarousel[i];
+
+    thumbs.appendChild(singleThumb);
+
+    singleThumb.appendChild(thumbImage);
+
+    singleThumb.appendChild(overlay);
+
+}
