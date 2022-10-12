@@ -36,7 +36,16 @@ previous.addEventListener("click", function () {
 
     imgPosition --;
 
-    allImages[imgPosition].classList.add("active");
+    if (imgPosition < 0) {
+
+        imgPosition = imagesCarousel.length -1;
+        allImages[imgPosition].classList.add("active");
+
+    } else {
+
+        allImages[imgPosition].classList.add("active");
+        
+    }
 })
 
 next.addEventListener("click", function () {
@@ -45,5 +54,14 @@ next.addEventListener("click", function () {
 
     imgPosition ++;
 
-    allImages[imgPosition].classList.add("active");
+    if (imgPosition > imagesCarousel.length -1) {
+
+        imgPosition = 0;
+        allImages[imgPosition].classList.add("active");
+
+    } else {
+
+        allImages[imgPosition].classList.add("active");
+
+    }
 })
